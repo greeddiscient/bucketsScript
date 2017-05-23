@@ -8,15 +8,18 @@ class player(object):
         self.teamAbbrev=teamAbbrev
         self.playerNo=playerNo
         self.colorways=colorways
+totalImages=["https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154255_IMG_8812.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154430_IMG_8816.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154421_IMG_8815.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154157_IMG_8807.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154400_IMG_8814.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154139_IMG_8805.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173434_IMG_8636.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173423_IMG_8635.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173316_IMG_8632.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173304_IMG_8631.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173324_IMG_8633.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173412_IMG_8634.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170223171457_IMG_8630.JPG?649068638561730259"]
+img={"White Home":"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154139_IMG_8805.JPG?649068638561730259",
+"Orange Away":"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173304_IMG_8631.JPG?649068638561730259",
+"Alternate Purple":""}
+sc30=player("Devin", "Booker", "Phoenix Suns", "phx", 1,["White Home","Orange Away","Alternate Purple"])
+# kt11=player("Giannis", "Antetokounmpo", "Milwaukee Bucks", "mil", 34,["White Home","Green Away","Alternate Black"])
+# dg23=player("Kevin", "Love", "Cleveland Cavaliers", "cle", 0,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
+# kd35=player("JR", "Smith", "Cleveland Cavaliers", "cle", 5,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
+# ai09=player("Tristan", "Thompson", "Cleveland Cavaliers", "cle", 13,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
 
-sc30=player("Stephen", "Curry", "Golden State Warriors", "gsw", 30,["White Home","Blue Away","Christmas '16","CNY Black"])
-kt11=player("Klay", "Thompson", "Golden State Warriors", "gsw", 11,["White Home","Blue Away","Christmas '16","CNY Black"])
-dg23=player("Draymond", "Green", "Golden State Warriors", "gsw", 23,["White Home","Blue Away","Christmas '16","CNY Black"])
-kd35=player("Kevin", "Durant", "Golden State Warriors", "gsw", 35,["White Home","Blue Away","Christmas '16","CNY Black"])
-ai09=player("Andre", "Iguodala", "Golden State Warriors", "gsw", 9,["White Home","Blue Away","Christmas '16","CNY Black"])
 
-
-with open("gsw.csv", "wb") as csv_file:
+with open("phx.csv", "wb") as csv_file:
         writer = csv.writer(csv_file, delimiter=',')
 
         headers =["Handle", "Title","Body (HTML)","Vendor","Type","Tags","Published", "Option1 Name", "Option1 Value", "Option2 Name","Option2 Value","Option3 Name", "Option3 Value","Variant SKU","Variant Grams","Variant Inventory Tracker","Variant Inventory Qty", "Variant Inventory Policy","Variant Fulfillment Service", "Variant Price",
@@ -26,7 +29,7 @@ with open("gsw.csv", "wb") as csv_file:
         print sc30.firstName
         writer.writerow(headers)
         sizes=["S","M","L","XL","XXL"]
-        players = [sc30,kt11,dg23,kd35,ai09]
+        players = [sc30]
         playerstack=[]
         for player in players:
             playerstack.append(player)
@@ -42,9 +45,10 @@ with open("gsw.csv", "wb") as csv_file:
                 for size in sizes:
 
                     for colorway in colorwaystack:
-
+                        i=0
                         for player in playerstack:
                             toWrite=[None]*100
+
                             if first==True:
 
                                 title = playerhandle.teamName + " #"+str(playerhandle.playerNo)+" "+playerhandle.firstName+" "+playerhandle.lastName + " NBA Swingman Jersey"
@@ -78,9 +82,13 @@ with open("gsw.csv", "wb") as csv_file:
                             toWrite[19]="30"
                             toWrite[21]="TRUE"
                             toWrite[22]="TRUE"
+                            
+
+                            toWrite[43]=img[colorway]
                             toWrite[44]="kg"
                             writer.writerow(toWrite)
                             first=False;
+
                 first=True;
                 colorwaystack.pop(0)
                 colorwaystack.append(colorwayhandle)

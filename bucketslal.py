@@ -9,14 +9,14 @@ class player(object):
         self.playerNo=playerNo
         self.colorways=colorways
 
-sc30=player("Stephen", "Curry", "Golden State Warriors", "gsw", 30,["White Home","Blue Away","Christmas '16","CNY Black"])
-kt11=player("Klay", "Thompson", "Golden State Warriors", "gsw", 11,["White Home","Blue Away","Christmas '16","CNY Black"])
-dg23=player("Draymond", "Green", "Golden State Warriors", "gsw", 23,["White Home","Blue Away","Christmas '16","CNY Black"])
-kd35=player("Kevin", "Durant", "Golden State Warriors", "gsw", 35,["White Home","Blue Away","Christmas '16","CNY Black"])
-ai09=player("Andre", "Iguodala", "Golden State Warriors", "gsw", 9,["White Home","Blue Away","Christmas '16","CNY Black"])
+sc30=player("Russel", "Westbrook", "Oklahoma City Thunder", "okc", 0,["White Home","Blue Away","Alternate Orange"])
+# kt11=player("Blake", "Griffin", "Los Angeles Clippers", "lac", 32,["White Home","Red Away","Alternate Blue","Alternate Black"])
+# dg23=player("Deandre", "Griffin", "Los Angeles Clippers", "lac", 32,["White Home","Red Away","Alternate Blue","Alternate Black"])
+# kd35=player("JR", "Smith", "Cleveland Cavaliers", "cle", 5,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
+# ai09=player("Tristan", "Thompson", "Cleveland Cavaliers", "cle", 13,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
 
 
-with open("gsw.csv", "wb") as csv_file:
+with open("okc.csv", "wb") as csv_file:
         writer = csv.writer(csv_file, delimiter=',')
 
         headers =["Handle", "Title","Body (HTML)","Vendor","Type","Tags","Published", "Option1 Name", "Option1 Value", "Option2 Name","Option2 Value","Option3 Name", "Option3 Value","Variant SKU","Variant Grams","Variant Inventory Tracker","Variant Inventory Qty", "Variant Inventory Policy","Variant Fulfillment Service", "Variant Price",
@@ -26,7 +26,7 @@ with open("gsw.csv", "wb") as csv_file:
         print sc30.firstName
         writer.writerow(headers)
         sizes=["S","M","L","XL","XXL"]
-        players = [sc30,kt11,dg23,kd35,ai09]
+        players = [sc30]
         playerstack=[]
         for player in players:
             playerstack.append(player)
