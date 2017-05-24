@@ -8,10 +8,44 @@ class player(object):
         self.teamAbbrev=teamAbbrev
         self.playerNo=playerNo
         self.colorways=colorways
-totalImages=["https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154255_IMG_8812.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154430_IMG_8816.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154421_IMG_8815.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154157_IMG_8807.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154400_IMG_8814.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154139_IMG_8805.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173434_IMG_8636.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173423_IMG_8635.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173316_IMG_8632.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173304_IMG_8631.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173324_IMG_8633.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173412_IMG_8634.JPG?649068638561730259","https://cdn.shopify.com/s/files/1/2019/6095/files/20170223171457_IMG_8630.JPG?649068638561730259"]
-img={"White Home":"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154139_IMG_8805.JPG?649068638561730259",
-"Orange Away":"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173304_IMG_8631.JPG?649068638561730259",
-"Alternate Purple":""}
+
+totalImages=[
+    "https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154400_IMG_8814.JPG?649068638561730259",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154139_IMG_8805.JPG?649068638561730259",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154421_IMG_8815.JPG?649068638561730259",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154255_IMG_8812.JPG?649068638561730259",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154430_IMG_8816.JPG?649068638561730259",
+
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173304_IMG_8631.JPG?649068638561730259",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173412_IMG_8634.JPG?649068638561730259",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173316_IMG_8632.JPG?649068638561730259",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173423_IMG_8635.JPG?649068638561730259",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173324_IMG_8633.JPG?649068638561730259"
+]
+
+imgsDB={
+    "White Home":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154400_IMG_8814.JPG?649068638561730259",
+    "https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154139_IMG_8805.JPG?649068638561730259",
+    "https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154421_IMG_8815.JPG?649068638561730259",
+    "https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154255_IMG_8812.JPG?649068638561730259",
+    "https://cdn.shopify.com/s/files/1/2019/6095/files/20170315154430_IMG_8816.JPG?649068638561730259"
+    ],
+    "Orange Away":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173304_IMG_8631.JPG?649068638561730259",
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173412_IMG_8634.JPG?649068638561730259",
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173316_IMG_8632.JPG?649068638561730259",
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173423_IMG_8635.JPG?649068638561730259",
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170223173324_IMG_8633.JPG?649068638561730259"
+    ],
+    "Alternate Purple":[
+    ]
+}
+whichImages={
+    "Devin": imgsDB
+
+}
+
 sc30=player("Devin", "Booker", "Phoenix Suns", "phx", 1,["White Home","Orange Away","Alternate Purple"])
 # kt11=player("Giannis", "Antetokounmpo", "Milwaukee Bucks", "mil", 34,["White Home","Green Away","Alternate Black"])
 # dg23=player("Kevin", "Love", "Cleveland Cavaliers", "cle", 0,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
@@ -42,10 +76,19 @@ with open("phx.csv", "wb") as csv_file:
             toWrite=[None]*100
             for colorwayhandle in playerhandle.colorways:
                 first=True;
+                i=0
+                #populate all images
+                allImages=[]
+                for img in whichImages[playerhandle.firstName][colorwayhandle]:
+                    allImages.append(img)
+                for img in totalImages:
+                    if img not in allImages:
+                        allImages.append(img)
+
                 for size in sizes:
 
                     for colorway in colorwaystack:
-                        i=0
+
                         for player in playerstack:
                             toWrite=[None]*100
 
@@ -81,10 +124,19 @@ with open("phx.csv", "wb") as csv_file:
                             toWrite[18]="manual"
                             toWrite[19]="30"
                             toWrite[21]="TRUE"
-                            toWrite[22]="TRUE"
-                            
 
-                            toWrite[43]=img[colorway]
+
+                            toWrite[22]="TRUE"
+                            #all images
+                            if i<len(allImages):
+                                toWrite[24]=allImages[i]
+                                toWrite[25]=str(i+1)
+                                i+=1
+
+                            try:
+                                toWrite[43]=whichImages[player.firstName][colorway][0]
+                            except IndexError:
+                                print("no picture for"+colorway+player.firstName)
                             toWrite[44]="kg"
                             writer.writerow(toWrite)
                             first=False;

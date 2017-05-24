@@ -9,6 +9,7 @@ class player(object):
         self.playerNo=playerNo
         self.colorways=colorways
 
+
 sc30=player("Demar", "DeRozan", "Toronto Raptors", "tor", 10,["White Home","Red Away"])
 kt11=player("Kyle", "Lowry", "Toronto Raptors", "tor", 7,["White Home","Red Away"])
 # dg23=player("Kevin", "Love", "Cleveland Cavaliers", "cle", 0,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
@@ -78,6 +79,8 @@ with open("tor.csv", "wb") as csv_file:
                             toWrite[19]="30"
                             toWrite[21]="TRUE"
                             toWrite[22]="TRUE"
+                            # IMAGE SOURCE FOR VARIANT
+                            toWrite[43]=
                             toWrite[44]="kg"
                             writer.writerow(toWrite)
                             first=False;
