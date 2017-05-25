@@ -9,13 +9,199 @@ class player(object):
         self.playerNo=playerNo
         self.colorways=colorways
 
-sc30=player("Stephen", "Curry", "Golden State Warriors", "gsw", 30,["White Home","Blue Away","Christmas '16","CNY Black"])
-kt11=player("Klay", "Thompson", "Golden State Warriors", "gsw", 11,["White Home","Blue Away","Christmas '16","CNY Black"])
-dg23=player("Draymond", "Green", "Golden State Warriors", "gsw", 23,["White Home","Blue Away","Christmas '16","CNY Black"])
-kd35=player("Kevin", "Durant", "Golden State Warriors", "gsw", 35,["White Home","Blue Away","Christmas '16","CNY Black"])
-ai09=player("Andre", "Iguodala", "Golden State Warriors", "gsw", 9,["White Home","Blue Away","Christmas '16","CNY Black"])
+sc30=player("Stephen", "Curry", "Golden State Warriors", "gsw", 30,["White Home","Blue Away","Christmas '16","Throwback Yellow"])
+kt11=player("Klay", "Thompson", "Golden State Warriors", "gsw", 11,["White Home","Blue Away","Christmas '16","Throwback Yellow"])
+dg23=player("Draymond", "Green", "Golden State Warriors", "gsw", 23,["White Home","Blue Away","Christmas '16","Throwback Yellow"])
+kd35=player("Kevin", "Durant", "Golden State Warriors", "gsw", 35,["White Home","Blue Away","Christmas '16","Throwback Yellow"])
+# ai09=player("Andre", "Iguodala", "Golden State Warriors", "gsw", 9,["White Home","Blue Away","Christmas '16","Throwback Yellow"])
+
+totalImages=[
+    "https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8546.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8549.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8547.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8550.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8548.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8576.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8579.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8577.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8580.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8578.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8564.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8574.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8568.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8573.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8565.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8557.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8562.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8560.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8563.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8559.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8551.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8555.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8553.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8556.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8552.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8538.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8541.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8540.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8543.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8539.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8530.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8536.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8531.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8537.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8534.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315170024_IMG_8961.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315170103_IMG_8967.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315170034_IMG_8963.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315170111_IMG_8968.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315170040_IMG_8964.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Green_White_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Green_White_Back.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Durant_Yellow_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Durant_Yellow_Back.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Durant_Yellow_Det.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Green_Christmas_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Green_Christmas_Back.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Green_Blue_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Green_Blue_Back.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Thompson_Yellow_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Thompson_Yellow_Back.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Curry_Yellow_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Curry_Yellow_Back.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Thompson_Christmas_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Thompson_Christmas_Back.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Thompson_Christmas_Det1.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Thompson_Christmas_Det.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Durant_Christmas_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Durant_Christmas_Back.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Durant_Christmas_Det.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Durant_Christmas_Det1.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181856_IMG_8718.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181935_IMG_8721.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181900_IMG_8719.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181940_IMG_8722.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181904_IMG_8720.JPG?10139439430536178035",
 
 
+]
+
+imgsSC={
+    "White Home":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8546.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8549.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8547.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8550.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8548.JPG?10139439430536178035",
+    ],
+    "Blue Away":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8576.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8579.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8577.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8580.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8578.JPG?10139439430536178035",
+    ],
+    "Christmas '16":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181856_IMG_8718.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181935_IMG_8721.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181900_IMG_8719.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181940_IMG_8722.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181904_IMG_8720.JPG?10139439430536178035",
+    ],
+    "Throwback Yellow":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/Curry_Yellow_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Curry_Yellow_Back.JPG?13313192378586356337",
+    ]
+}
+
+
+imgsKT={
+    "White Home":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8538.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8541.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8540.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8543.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8539.JPG?10139439430536178035",
+    ],
+    "Blue Away":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8557.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8562.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8560.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8563.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8559.JPG?10139439430536178035",
+    ],
+    "Christmas '16":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/Thompson_Christmas_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Thompson_Christmas_Back.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Thompson_Christmas_Det1.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Thompson_Christmas_Det.JPG?13313192378586356337",
+    ],
+    "Throwback Yellow":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170315170024_IMG_8961.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315170103_IMG_8967.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315170034_IMG_8963.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315170111_IMG_8968.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315170040_IMG_8964.JPG?10139439430536178035",
+    ]
+}
+
+
+imgsDG={
+    "White Home":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/Green_White_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Green_White_Back.JPG?13313192378586356337",
+    ],
+    "Blue Away":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/Green_Blue_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Green_Blue_Back.JPG?13313192378586356337",
+    ],
+    "Christmas '16":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/Green_Christmas_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Green_Christmas_Back.JPG?13313192378586356337",
+    ],
+    "Throwback Yellow":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8551.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8555.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8553.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8556.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8552.JPG?10139439430536178035",
+    ]
+}
+imgsKD={
+    "White Home":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8530.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8536.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8531.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8537.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8534.JPG?10139439430536178035",
+    ],
+    "Blue Away":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8564.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8574.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8568.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8573.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8565.JPG?10139439430536178035",
+    ],
+    "Christmas '16":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/Durant_Christmas_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Durant_Christmas_Back.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Durant_Christmas_Det.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Durant_Christmas_Det1.JPG?13313192378586356337",
+    ],
+    "Throwback Yellow":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/Durant_Yellow_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Durant_Yellow_Back.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Durant_Yellow_Det.JPG?13313192378586356337",
+    ]
+}
+
+whichImages={
+    "Stephen": imgsSC,
+    "Klay": imgsKT,
+    "Draymond": imgsDG,
+    "Kevin": imgsKD
+    # "Andre" :imgsJR
+}
 with open("gsw.csv", "wb") as csv_file:
         writer = csv.writer(csv_file, delimiter=',')
 
@@ -26,7 +212,7 @@ with open("gsw.csv", "wb") as csv_file:
         print sc30.firstName
         writer.writerow(headers)
         sizes=["S","M","L","XL","XXL"]
-        players = [sc30,kt11,dg23,kd35,ai09]
+        players = [sc30,kt11,dg23,kd35]
         playerstack=[]
         for player in players:
             playerstack.append(player)
@@ -39,6 +225,14 @@ with open("gsw.csv", "wb") as csv_file:
             toWrite=[None]*100
             for colorwayhandle in playerhandle.colorways:
                 first=True;
+                i=0
+                #populate all images
+                allImages=[]
+                for img in whichImages[playerhandle.firstName][colorwayhandle]:
+                    allImages.append(img)
+                for img in totalImages:
+                    if img not in allImages:
+                        allImages.append(img)
                 for size in sizes:
 
                     for colorway in colorwaystack:
@@ -78,6 +272,19 @@ with open("gsw.csv", "wb") as csv_file:
                             toWrite[19]="30"
                             toWrite[21]="TRUE"
                             toWrite[22]="TRUE"
+
+                            #all images
+                            if i<len(allImages):
+                                toWrite[24]=allImages[i]
+                                toWrite[25]=str(i+1)
+                                i+=1
+
+                            #variant images
+                            try:
+                                toWrite[43]=whichImages[player.firstName][colorway][0]
+                            except IndexError:
+                                print("no picture for"+colorway+player.firstName)
+
                             toWrite[44]="kg"
                             writer.writerow(toWrite)
                             first=False;

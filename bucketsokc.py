@@ -9,13 +9,59 @@ class player(object):
         self.playerNo=playerNo
         self.colorways=colorways
 
-sc30=player("Russel", "Westbrook", "Oklahoma City Thunder", "okc", 0,["White Home","Blue Away","Alternate Orange"])
-# kt11=player("Blake", "Griffin", "Los Angeles Clippers", "lac", 32,["White Home","Red Away","Alternate Blue","Alternate Black"])
-# dg23=player("Deandre", "Griffin", "Los Angeles Clippers", "lac", 32,["White Home","Red Away","Alternate Blue","Alternate Black"])
-# kd35=player("JR", "Smith", "Cleveland Cavaliers", "cle", 5,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
-# ai09=player("Tristan", "Thompson", "Cleveland Cavaliers", "cle", 13,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
+sc30=player("Russel", "Westbrook", "Oklahoma City Thunder", "okc", 0,["White Home","Blue Away","Orange Alternate"])
+# kt11=player("Blake", "Griffin", "Los Angeles Clippers", "lac", 32,["White Home","Red Away","Black Alternate"])
+# dg23=player("Deandre", "Jordan", "Los Angeles Clippers", "lac", 6,["White Home","Red Away","Black Alternate"])
+# kd35=player("JR", "Smith", "Cleveland Cavaliers", "cle", 5,["White Home","Red Wine","Alternate Gold","Christmas '16"])
+# ai09=player("Tristan", "Thompson", "Cleveland Cavaliers", "cle", 13,["White Home","Red Wine","Alternate Gold","Christmas '16"])
+
+totalImages=[
+    "https://cdn.shopify.com/s/files/1/2019/6095/files/20170315162526_IMG_8904.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315162634_IMG_8911.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315162553_IMG_8907.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315162646_IMG_8913.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315162605_IMG_8909.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8417.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8420.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8418.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8421.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8419.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315164545_IMG_8929.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315164630_IMG_8931.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315164551_IMG_8930.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315164633_IMG_8932.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315164633_IMG_8932.JPG?12673650263378968735",
+]
+
+imgsRW={
+    "White Home":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170315162526_IMG_8904.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315162634_IMG_8911.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315162553_IMG_8907.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315162646_IMG_8913.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315162605_IMG_8909.JPG?12673650263378968735",
+    ],
+    "Blue Away":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8417.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8420.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8418.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8421.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8419.JPG?12673650263378968735",
+    ],
+    "Orange Alternate":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170315164545_IMG_8929.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315164630_IMG_8931.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315164551_IMG_8930.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315164633_IMG_8932.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315164633_IMG_8932.JPG?12673650263378968735",
+    ]
+}
 
 
+whichImages={
+    "Russel": imgsRW,
+
+}
 with open("okc.csv", "wb") as csv_file:
         writer = csv.writer(csv_file, delimiter=',')
 
@@ -39,6 +85,14 @@ with open("okc.csv", "wb") as csv_file:
             toWrite=[None]*100
             for colorwayhandle in playerhandle.colorways:
                 first=True;
+                i=0
+                #populate all images
+                allImages=[]
+                for img in whichImages[playerhandle.firstName][colorwayhandle]:
+                    allImages.append(img)
+                for img in totalImages:
+                    if img not in allImages:
+                        allImages.append(img)
                 for size in sizes:
 
                     for colorway in colorwaystack:
@@ -78,6 +132,19 @@ with open("okc.csv", "wb") as csv_file:
                             toWrite[19]="30"
                             toWrite[21]="TRUE"
                             toWrite[22]="TRUE"
+
+                            #all images
+                            if i<len(allImages):
+                                toWrite[24]=allImages[i]
+                                toWrite[25]=str(i+1)
+                                i+=1
+
+                            #variant images
+                            try:
+                                toWrite[43]=whichImages[player.firstName][colorway][0]
+                            except IndexError:
+                                print("no picture for"+colorway+player.firstName)
+
                             toWrite[44]="kg"
                             writer.writerow(toWrite)
                             first=False;

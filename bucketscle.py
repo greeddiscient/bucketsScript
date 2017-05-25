@@ -9,13 +9,176 @@ class player(object):
         self.playerNo=playerNo
         self.colorways=colorways
 
-sc30=player("Chris", "Paul", "Los Angeles Clippers", "lac", 3,["White Home","Red Away","Alternate Blue","Alternate Black"])
-kt11=player("Blake", "Griffin", "Los Angeles Clippers", "lac", 32,["White Home","Red Away","Alternate Blue","Alternate Black"])
-# dg23=player("Kevin", "Love", "Cleveland Cavaliers", "cle", 0,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
-# kd35=player("JR", "Smith", "Cleveland Cavaliers", "cle", 5,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
-# ai09=player("Tristan", "Thompson", "Cleveland Cavaliers", "cle", 13,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
+sc30=player("Kyrie", "Irving", "Cleveland Cavaliers", "cle", 2,["White Home","Red Wine","Alternate Gold","Christmas '16"])
+kt11=player("LeBron", "James", "Cleveland Cavaliers", "cle", 23,["White Home","Red Wine","Alternate Gold","Christmas '16"])
+dg23=player("Kevin", "Love", "Cleveland Cavaliers", "cle", 0,["White Home","Red Wine","Alternate Gold","Christmas '16"])
+kd35=player("JR", "Smith", "Cleveland Cavaliers", "cle", 5,["White Home","Red Wine","Alternate Gold","Christmas '16"])
+# ai09=player("Tristan", "Thompson", "Cleveland Cavaliers", "cle", 13,["White Home","Red Wine","Alternate Gold","Christmas '16"])
 
+totalImages=[
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8582.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8585.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8584.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8586.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8583.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8587.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8591.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8588.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8592.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8589.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181717_IMG_8714.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181634_IMG_8712.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181739_IMG_8717.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181641_IMG_8713.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181730_IMG_8716.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223182253_IMG_8730.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223182221_IMG_8728.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223182256_IMG_8731.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223182227_IMG_8729.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223182300_IMG_8732.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155034_IMG_8826.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155115_IMG_8830.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155043_IMG_8827.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155119_IMG_8831.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155048_IMG_8828.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155601_IMG_8840.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155841_IMG_8855.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155646_IMG_8846.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155752_IMG_8850.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155632_IMG_8844.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315171405_IMG_8984.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315171844_IMG_8991.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315171824_IMG_8989.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315171851_IMG_8992.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315171424_IMG_8988.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315172019_IMG_8996.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315172109_IMG_9001.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315172043_IMG_9000.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315172113_IMG_9002.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315172027_IMG_8998.JPG?10139439430536178035",
 
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Smith_White_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Smith_White_Back.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Smith_Gold_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Smith_Gold_Back.JPG?13313192378586356337",
+
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Love_Gold_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Love_Gold_Back.JPG?13313192378586356337",
+]
+
+imgsKI={
+    "White Home":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8587.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8591.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8588.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8592.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8589.JPG10139439430536178035"
+    ],
+    "Red Wine":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155034_IMG_8826.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155115_IMG_8830.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155043_IMG_8827.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155119_IMG_8831.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155048_IMG_8828.JPG?10139439430536178035"
+    ],
+    "Christmas '16":[
+
+    ],
+    "Alternate Gold":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170315172019_IMG_8996.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315172109_IMG_9001.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315172043_IMG_9000.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315172113_IMG_9002.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315172027_IMG_8998.JPG?10139439430536178035"
+    ]
+}
+
+imgsKL={
+    "White Home":[
+
+    ],
+    "Red Wine":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170223182253_IMG_8730.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223182221_IMG_8728.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223182256_IMG_8731.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223182227_IMG_8729.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223182300_IMG_8732.JPG?10139439430536178035"
+    ],
+    "Christmas '16":[
+
+    ],
+    "Alternate Gold":[
+    "https://cdn.shopify.com/s/files/1/2019/6095/files/Love_Gold_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Love_Gold_Back.JPG?13313192378586356337",
+    ]
+}
+imgsLBJ={
+    "White Home":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8582.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8585.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8584.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8586.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8583.JPG?10139439430536178035"
+    ],
+    "Red Wine":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155601_IMG_8840.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155841_IMG_8855.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155646_IMG_8846.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155752_IMG_8850.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315155632_IMG_8844.JPG?10139439430536178035"
+    ],
+    "Christmas '16":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181717_IMG_8714.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181634_IMG_8712.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181739_IMG_8717.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181641_IMG_8713.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170223181730_IMG_8716.JPG?10139439430536178035"
+    ],
+    "Alternate Gold":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/20170315171405_IMG_8984.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315171844_IMG_8991.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315171824_IMG_8989.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315171851_IMG_8992.JPG?10139439430536178035",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/20170315171424_IMG_8988.JPG?10139439430536178035"
+    ]
+}
+imgsTT={
+    "White Home":[
+
+    ],
+    "Red Wine":[
+
+    ],
+    "Christmas '16":[
+
+    ],
+    "Alternate Gold":[
+
+    ]
+}
+imgsJR={
+    "White Home":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/Smith_White_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Smith_White_Back.JPG?13313192378586356337",
+    ],
+    "Red Wine":[
+
+    ],
+    "Christmas '16":[
+
+    ],
+    "Alternate Gold":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/Smith_Gold_Front.JPG?13313192378586356337",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/Smith_Gold_Back.JPG?13313192378586356337",
+    ]
+}
+whichImages={
+    "LeBron": imgsLBJ,
+    "Kevin": imgsKL,
+    "Kyrie": imgsKI,
+    "Tristan": imgsTT,
+    "JR" :imgsJR
+}
 with open("cle.csv", "wb") as csv_file:
         writer = csv.writer(csv_file, delimiter=',')
 
@@ -26,7 +189,7 @@ with open("cle.csv", "wb") as csv_file:
         print sc30.firstName
         writer.writerow(headers)
         sizes=["S","M","L","XL","XXL"]
-        players = [sc30,kt11,dg23,kd35,ai09]
+        players = [sc30,kt11,dg23,kd35]
         playerstack=[]
         for player in players:
             playerstack.append(player)
@@ -39,6 +202,14 @@ with open("cle.csv", "wb") as csv_file:
             toWrite=[None]*100
             for colorwayhandle in playerhandle.colorways:
                 first=True;
+                i=0
+                #populate all images
+                allImages=[]
+                for img in whichImages[playerhandle.firstName][colorwayhandle]:
+                    allImages.append(img)
+                for img in totalImages:
+                    if img not in allImages:
+                        allImages.append(img)
                 for size in sizes:
 
                     for colorway in colorwaystack:
@@ -78,6 +249,19 @@ with open("cle.csv", "wb") as csv_file:
                             toWrite[19]="30"
                             toWrite[21]="TRUE"
                             toWrite[22]="TRUE"
+
+                            #all images
+                            if i<len(allImages):
+                                toWrite[24]=allImages[i]
+                                toWrite[25]=str(i+1)
+                                i+=1
+
+                            #variant images
+                            try:
+                                toWrite[43]=whichImages[player.firstName][colorway][0]
+                            except IndexError:
+                                print("no picture for"+colorway+player.firstName)
+
                             toWrite[44]="kg"
                             writer.writerow(toWrite)
                             first=False;

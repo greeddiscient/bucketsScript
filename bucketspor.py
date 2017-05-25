@@ -9,13 +9,58 @@ class player(object):
         self.playerNo=playerNo
         self.colorways=colorways
 
-sc30=player("Damian", "Lillard", "Portland Trailblazers", "por", 0,["White Home","Black Away","Alternate Red", "White(S)"])
-kt11=player("CJ", "McCollum", "Portland Trailblazers", "por", 3,["White Home","Black Away","Alternate Red", "White(S)"])
+sc30=player("Damian", "Lillard", "Portland Trailblazers", "por", 0,["White Home","Black Away"])
+kt11=player("CJ", "McCollum", "Portland Trailblazers", "por", 3,["White Home","Black Away"])
 # dg23=player("Kevin", "Love", "Cleveland Cavaliers", "cle", 0,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
 # kd35=player("JR", "Smith", "Cleveland Cavaliers", "cle", 5,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
 # ai09=player("Tristan", "Thompson", "Cleveland Cavaliers", "cle", 13,["White Home","Red Wine","Alternate Gold","Christmas '16'"])
 
+totalImages=[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8525.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8523.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8526.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8529.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8527.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8520.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8518.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8522.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8519.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8521.JPG?12673650263378968735",
+]
 
+imgsRW={
+    "White Home":[
+
+    ],
+    "Black Away":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8525.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8523.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8526.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8529.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8527.JPG?12673650263378968735",
+    ],
+
+}
+
+imgsCJ={
+    "White Home":[
+
+    ],
+    "Black Away":[
+        "https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8520.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8518.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8522.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8519.JPG?12673650263378968735",
+"https://cdn.shopify.com/s/files/1/2019/6095/files/IMG_8521.JPG?12673650263378968735",
+    ],
+
+}
+
+
+whichImages={
+    "Damian": imgsRW,
+    "CJ": imgsCJ
+}
 with open("por.csv", "wb") as csv_file:
         writer = csv.writer(csv_file, delimiter=',')
 
@@ -39,6 +84,14 @@ with open("por.csv", "wb") as csv_file:
             toWrite=[None]*100
             for colorwayhandle in playerhandle.colorways:
                 first=True;
+                i=0
+                #populate all images
+                allImages=[]
+                for img in whichImages[playerhandle.firstName][colorwayhandle]:
+                    allImages.append(img)
+                for img in totalImages:
+                    if img not in allImages:
+                        allImages.append(img)
                 for size in sizes:
 
                     for colorway in colorwaystack:
@@ -78,6 +131,19 @@ with open("por.csv", "wb") as csv_file:
                             toWrite[19]="30"
                             toWrite[21]="TRUE"
                             toWrite[22]="TRUE"
+
+                            #all images
+                            if i<len(allImages):
+                                toWrite[24]=allImages[i]
+                                toWrite[25]=str(i+1)
+                                i+=1
+
+                            #variant images
+                            try:
+                                toWrite[43]=whichImages[player.firstName][colorway][0]
+                            except IndexError:
+                                print("no picture for"+colorway+player.firstName)
+
                             toWrite[44]="kg"
                             writer.writerow(toWrite)
                             first=False;
